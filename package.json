@@ -4,21 +4,28 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run build:theme && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:theme": "node ./theme/index.mjs"
   },
   "dependencies": {
+    "@cloudscape-design/components": "^3.0.394",
+    "@cloudscape-design/components-themeable": "^3.0.407",
+    "@cloudscape-design/global-styles": "^1.0.12",
+    "next": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "next": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/react": "latest",
     "@types/node": "latest",
+    "@types/react": "latest",
     "@types/react-dom": "latest",
     "eslint": "latest",
-    "eslint-config-next": "latest"
+    "eslint-config-next": "latest",
+    "typescript": "latest"
+  },
+  "bin": {
+    "cloudscape-next-app": "bin/install.mjs"
   }
 }
